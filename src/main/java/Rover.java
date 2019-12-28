@@ -1,4 +1,8 @@
 public class Rover {
+    public static final String EAST = "E";
+    public static final String SOUTH = "S";
+    public static final String WEST = "W";
+    public static final String NORTH = "N";
     private Area area;
     private int x;
     private int y;
@@ -17,13 +21,13 @@ public class Rover {
 
     public void move() {
         if(x < area.getAreaX() && y < area.getAreaY()){
-            if(orientation.equals("E")){
+            if(orientation.equals(EAST)){
                 x++;
-            }else if(orientation.equals("W")){
+            }else if(orientation.equals(WEST)){
                 x--;
-            }else if(orientation.equals("N")){
+            }else if(orientation.equals(NORTH)){
                 y++;
-            }else if(orientation.equals("S")){
+            }else if(orientation.equals(SOUTH)){
                 y--;
             }
         }else{
@@ -32,26 +36,26 @@ public class Rover {
     }
 
     public void turnLeft() {
-        if ("E".equals(orientation)) {
-            this.orientation = "N";
-        } else if ("S".equals(orientation)) {
-            this.orientation = "E";
-        } else if ("W".equals(orientation)) {
-            this.orientation = "S";
-        } else if ("N".equals(orientation)) {
-            this.orientation = "W";
+        if (EAST.equals(orientation)) {
+            this.orientation = NORTH;
+        } else if (SOUTH.equals(orientation)) {
+            this.orientation = EAST;
+        } else if (WEST.equals(orientation)) {
+            this.orientation = SOUTH;
+        } else if (NORTH.equals(orientation)) {
+            this.orientation = WEST;
         }
     }
 
     public void turnRight() {
-        if ("E".equals(orientation)) {
-            this.orientation = "S";
-        } else if ("S".equals(orientation)) {
-            this.orientation = "W";
-        } else if ("W".equals(orientation)) {
-            this.orientation = "N";
-        } else if ("N".equals(orientation)) {
-            this.orientation = "E";
+        if (EAST.equals(orientation)) {
+            this.orientation = SOUTH;
+        } else if (SOUTH.equals(orientation)) {
+            this.orientation = WEST;
+        } else if (WEST.equals(orientation)) {
+            this.orientation = NORTH;
+        } else if (NORTH.equals(orientation)) {
+            this.orientation = EAST;
         }
     }
 }

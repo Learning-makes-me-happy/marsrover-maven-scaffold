@@ -12,7 +12,7 @@ public class MarsRoverTest {
     public void land(){
         Area area = new Area(10,10);
         Rover rover =new Rover();
-        rover.land(area,5,5, "E");
+        rover.land(area,5,5, Rover.EAST);
         String position = rover.getPosition();
         assertThat(position).isEqualTo("55E");
     }
@@ -20,7 +20,7 @@ public class MarsRoverTest {
     public void move_forward(){
         Area area = new Area(10,10);
         Rover rover =new Rover();
-        rover.land(area,5,5,"E");
+        rover.land(area,5,5, Rover.EAST);
         rover.move();
         String position = rover.getPosition();
         assertThat(position).isEqualTo("65E");
@@ -31,7 +31,7 @@ public class MarsRoverTest {
         Area area = new Area(10,10);
 
         Rover rover =new Rover();
-        rover.land(area,5,5,"S");
+        rover.land(area,5,5, Rover.SOUTH);
         rover.turnLeft();
         assertThat(rover.getPosition()).isEqualTo("55E");
 
@@ -52,7 +52,7 @@ public class MarsRoverTest {
         Area area = new Area(10,10);
 
         Rover rover =new Rover();
-        rover.land(area,5,5,"S");
+        rover.land(area,5,5, Rover.SOUTH);
         rover.turnRight();
         assertThat(rover.getPosition()).isEqualTo("55W");
 
@@ -83,7 +83,7 @@ public class MarsRoverTest {
         exceptedException.expectMessage("out of bound !");
         Area area = new Area(10,10);
         Rover rover =new Rover();
-        rover.land(area,20,5, "E");
+        rover.land(area,20,5, Rover.EAST);
         rover.move();
     }
 
@@ -93,7 +93,7 @@ public class MarsRoverTest {
         exceptedException.expectMessage("out of bound !");
         Area area = new Area(10,10);
         Rover rover =new Rover();
-        rover.land(area,10,5, "E");
+        rover.land(area,10,5, Rover.EAST);
         rover.move();
     }
 }
