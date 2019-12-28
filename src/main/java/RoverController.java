@@ -12,7 +12,7 @@ public class RoverController {
         int x = Integer.parseInt(commands[2]);
         int y = Integer.parseInt(commands[3]);
         Area area = new Area(areaX, areaY);
-        for (int i = 4; i < commands.length ; i++) {
+        for (int i = 4; i < commands.length; i++) {
             if (commands[i].equals("L")) {
                 rover.turnLeft();
             }
