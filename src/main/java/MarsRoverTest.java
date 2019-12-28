@@ -84,6 +84,7 @@ public class MarsRoverTest {
         Area area = new Area(10,10);
         Rover rover =new Rover();
         rover.land(area,20,5, "E");
+        rover.move();
     }
 
     @Test
