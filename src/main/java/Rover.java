@@ -36,25 +36,25 @@ public class Rover {
     }
 
     public void turnLeft() {
-        if (EAST.equals(orientation)) {
+        if (orientation.equals(EAST)) {
             this.orientation = NORTH;
-        } else if (SOUTH.equals(orientation)) {
+        } else if (orientation.equals(SOUTH)) {
             this.orientation = EAST;
-        } else if (WEST.equals(orientation)) {
+        } else if (orientation.equals(WEST)) {
             this.orientation = SOUTH;
-        } else if (NORTH.equals(orientation)) {
+        } else if (orientation.equals(NORTH)) {
             this.orientation = WEST;
         }
     }
 
     public void turnRight() {
-        if (EAST.equals(orientation)) {
+        if (orientation.equals(EAST)) {
             this.orientation = SOUTH;
-        } else if (SOUTH.equals(orientation)) {
+        } else if (orientation.equals(SOUTH)) {
             this.orientation = WEST;
-        } else if (WEST.equals(orientation)) {
+        } else if (orientation.equals(WEST)) {
             this.orientation = NORTH;
-        } else if (NORTH.equals(orientation)) {
+        } else if (orientation.equals(NORTH)) {
             this.orientation = EAST;
         }
     }

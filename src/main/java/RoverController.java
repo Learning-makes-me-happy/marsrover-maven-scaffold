@@ -5,7 +5,7 @@ public class RoverController {
         this.rover = rover;
     }
 
-    public String excute(String mission) {
+    public String execute(String mission) {
         String[] commands = mission.split(",");
         int areaX = Integer.parseInt(commands[0]);
         int areaY = Integer.parseInt(commands[1]);

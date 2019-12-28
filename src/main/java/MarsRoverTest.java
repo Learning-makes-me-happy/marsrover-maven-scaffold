@@ -9,17 +9,17 @@ public class MarsRoverTest {
     public ExpectedException exceptedException = ExpectedException.none();
 
     @Test
-    public void land(){
+    public void landTest() {
         Area area = new Area(10,10);
-        Rover rover =new Rover();
+        Rover rover = new Rover();
         rover.land(area,5,5, Rover.EAST);
         String position = rover.getPosition();
         assertThat(position).isEqualTo("55E");
     }
     @Test
-    public void move_forward(){
+    public void moveForwardTest() {
         Area area = new Area(10,10);
-        Rover rover =new Rover();
+        Rover rover = new Rover();
         rover.land(area,5,5, Rover.EAST);
         rover.move();
         String position = rover.getPosition();
@@ -27,10 +27,10 @@ public class MarsRoverTest {
     }
 
     @Test
-    public void turn_left(){
+    public void turnLeftTest() {
         Area area = new Area(10,10);
 
-        Rover rover =new Rover();
+        Rover rover = new Rover();
         rover.land(area,5,5, Rover.SOUTH);
         rover.turnLeft();
         assertThat(rover.getPosition()).isEqualTo("55E");
@@ -48,10 +48,10 @@ public class MarsRoverTest {
     }
 
     @Test
-    public void turn_right(){
+    public void turnRightTest() {
         Area area = new Area(10,10);
 
-        Rover rover =new Rover();
+        Rover rover = new Rover();
         rover.land(area,5,5, Rover.SOUTH);
         rover.turnRight();
         assertThat(rover.getPosition()).isEqualTo("55W");
@@ -69,30 +69,30 @@ public class MarsRoverTest {
     }
 
     @Test
-    public void roverBatchExcute(){
-        Rover rover =new Rover();
+    public void roverExecuteTest() {
+        Rover rover = new Rover();
         RoverController roverController = new RoverController(rover);
-        String mission ="10,10,5,5,E,M,L,M,R";
-        String postion = roverController.excute(mission);
-        assertThat(postion).isEqualTo("66E");
+        String mission = "10,10,5,5,E,M,L,M,R";
+        String position = roverController.execute(mission);
+        assertThat(position).isEqualTo("66E");
     }
 
     @Test
-    public void landException(){
+    public void landException() {
         exceptedException.expect(IllegalArgumentException.class);
         exceptedException.expectMessage("out of bound !");
         Area area = new Area(10,10);
-        Rover rover =new Rover();
+        Rover rover = new Rover();
         rover.land(area,20,5, Rover.EAST);
         rover.move();
     }
 
     @Test
-    public void moveException(){
+    public void moveException() {
         exceptedException.expect(IllegalArgumentException.class);
         exceptedException.expectMessage("out of bound !");
         Area area = new Area(10,10);
-        Rover rover =new Rover();
+        Rover rover = new Rover();
         rover.land(area,10,5, Rover.EAST);
         rover.move();
     }
